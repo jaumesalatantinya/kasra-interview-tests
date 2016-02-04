@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Test 2</title>
+	<script>
+		var Person = function (name){
+			this.pName = name;
+			this.greet = function () {
+				console.log('Hello my name is ' + this.pName);
+			}
+		}
+		var dan = new Person ('Dan');
+		dan.greet();
+		
+		var boundFunction = function() {
+        	dan.greet();
+    	}.bind(this);
+
+		setTimeout(boundFunction, 100);
+
+		//explicació
+		//http://stackoverflow.com/questions/20279484/how-to-access-the-correct-this-context-inside-a-callback
+	</script>
+</head>
+<body>
+	<p>
+		Sense tocar el codi referent a la clase Person <br />
+		<br />
+		<code>
+		var Person = function (name){<br/>
+			this.pName = name;<br/>
+			this.greet = function () {<br/>
+				console.log('Hello my name is ' + this.pName);<br/>
+			}<br/>
+		}<br/>
+		</code>
+		<br />
+		<i>(veure codi font)</i>
+		<br />
+		<br />
+		Modifica el códi per que la sortida sigui:<br />
+		Hello my name is Dan<br />
+		Hello my name is Dan<br />
+		<br />
+		Sortida actual consola:<br />
+		Hello my name is Dan<br />
+		Hello my name is <span style="color:red">undefined</span>
+	</p>
+</body>
+</html>

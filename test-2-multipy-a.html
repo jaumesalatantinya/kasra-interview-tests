@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Test 2</title>
+	<script>
+		function multiply(i) {
+			return function(j) {
+				return i * j;
+			}
+		}
+		var v = multiply(3)(2);
+		console.log(v);
+	</script>
+</head>
+<body>
+	<p>
+		Implementar la funció:<br />
+		multiply(3)(2);<br />
+		la sortida de la consola ha de ser -> 6 i no es pot cambiar la crida a la funció<br />
+	</p>
+</body>
+</html>

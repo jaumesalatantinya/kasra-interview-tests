@@ -1,0 +1,12 @@
+{
+  "name": "kasra-interview-tests",
+  "version": "1.0.0",
+  "description": "Kasra Interview Tests",
+  "author": "Jaume Sala Tantinya",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.0"
+  }
+}

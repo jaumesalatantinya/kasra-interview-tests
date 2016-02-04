@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Test 2</title>
+    <script>
+        //var words = ["omo", "oom", "abbb", "abba", "baba", "baab", "xyyy", "xxyy", "foo", "oof", "ofo", "babam", "mobile", "foobar", "barfoo"];
+
+        var words = ["moo", "omo", "oom", "boo", "obo", "ooo"];
+
+        var result = {};
+        for (var i=0; i<words.length; i++){
+            var currentWord = words[i];
+            result[currentWord] = lookForAnagrams(currentWord, words);
+        }
+
+        console.log(result);
+
+
+        function lookForAnagrams(word, words){
+
+            var anagrams = [];
+            for (var i=0; i<words.length; i++){
+                if (isAnagram(currentWord, words[i])){
+                    anagrams.push(words[i]);
+                }
+            }
+            return anagrams;
+        }
+
+        function isAnagram(currentWord, possibleAnagram ){
+          
+            if (currentWord == possibleAnagram) {
+                return false;
+            }
+            if (currentWord.length != possibleAnagram.length) {
+                return false;
+            }
+          
+            var currentWordSplitAndSort = currentWord.split('').sort();
+            var possibleAnagramSplitAndSort = possibleAnagram.split('').sort();
+          
+            if ( arraysAreEquals(currentWordSplitAndSort, possibleAnagramSplitAndSort) ) {
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+        function arraysAreEquals(a, b){
+
+            var count = 0;
+            if (a.length != b.length) {
+                return false;
+            }
+            for (var i=0; i<a.length; i++) {
+                if (a[i] == b[i]) {
+                    count ++;
+                }
+            }
+            if (count == a.length) {
+                return true
+            }
+            else {
+                return false
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>
+        Per cada paraula del array paraules busca els "anagrams"<br />
+        "Anagrams" son dues paraules que tenen exactament les mateixes lletres amb ordre cambiat. Exemple "hola" i "ahol" son "anagrams"<br />
+        exemple input: ["moo", "omo", "oom", "boo", "obo", "ooo"]<br />
+        exemple output: <br />
+        {<br />
+            moo: ["omo", "oom"],<br />
+            omo: ["moo", "oom"],<br />
+            oom: ["moo", "omo"],<br />
+            boo: ["obo"],<br />
+            obo: ["boo"],<br />
+            ooo: []<br />
+        } <br />
+    </p>
+</body>
+</html>
+
+
+
+

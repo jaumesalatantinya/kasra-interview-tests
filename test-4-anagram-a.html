@@ -37,34 +37,11 @@
             if (currentWord.length != possibleAnagram.length) {
                 return false;
             }
-          
-            var currentWordSplitAndSort = currentWord.split('').sort();
-            var possibleAnagramSplitAndSort = possibleAnagram.split('').sort();
-          
-            if ( arraysAreEquals(currentWordSplitAndSort, possibleAnagramSplitAndSort) ) {
+            if ( currentWord.split('').sort().join('') == possibleAnagram.split('').sort().join('') ) {
                 return true;
             }
             else{
                 return false;
-            }
-        }
-
-        function arraysAreEquals(a, b){
-
-            var count = 0;
-            if (a.length != b.length) {
-                return false;
-            }
-            for (var i=0; i<a.length; i++) {
-                if (a[i] == b[i]) {
-                    count ++;
-                }
-            }
-            if (count == a.length) {
-                return true
-            }
-            else {
-                return false
             }
         }
     </script>

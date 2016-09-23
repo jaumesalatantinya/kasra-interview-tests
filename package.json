@@ -5,6 +5,9 @@
   "author": "Jaume Sala Tantinya",
   "license": "MIT",
   "dependencies": {},
+  "scripts": {
+    "start": "gulp serve"
+  },
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "gulp": "^3.9.0"
